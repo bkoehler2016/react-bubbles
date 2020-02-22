@@ -27,10 +27,27 @@ In this project you will create a login page and request a token from the server
 Demonstrate your understanding of this Sprint's concepts by answering the following free-form questions. Edit this document to include your answers after each question. Make sure to leave a blank line above and below your answer so it is clear and easy to read by your project manager.
 
 - [ ] Explain what a token is used for.
+
+A token is used to authenticate users, ensuring that only those who are approved to view a page can access it. The token is returned from the server after requirements are met, and this token is then passed back to the server for any subsequent requests to verify identity.
+
 - [ ] What steps can you take in your web apps to keep your data secure?
+
+Using protected routes can help make sure that only people who are logged in or have the correct credentials can view pages with confidential information. Implementing an axios call that sends a unique (per-user) token in the header will allow this to happen, so that the server requests will only go through if the token is present.
+
+Using HTTPS can also ensure that data sent over the internet is encrypted, so that usernames, passwords, and tokens cannot be easily be seen by others on the network.
+
+Tokens and API keys should also be safely guarded. Tokens should not be reused among users, and API keys should not be saved in code. Instead of saving an API in code and commiting it to a public GitHub repository, services such as Zeit's Now can be used to set an environment variable representing the token, and the value of the variable is encrypted and stored and elsewhere rather than in the publically viewable files.
+
 - [ ] Describe how web servers work.
+
+A web server stores copies of data, including web pages and multipedia, to be served to clients. A client will use an IP address or URL to send a request to the server located at that address. The server listens for such requests and sends the requested data back to the client, which is then viewable through the client's browser or other display device.
+
 - [ ] Which HTTP methods can be mapped to the CRUD acronym that we use when interfacing with APIs/Servers.
 
+C: Create/post
+R: Read/get
+U: Update/put
+D: Delete/delete
 
 ## Project Set Up
 
@@ -51,9 +68,9 @@ Follow these steps to set up and work on your project:
 
 Follow these steps for completing your project:
 
-- [ ] Submit a Pull-Request to merge <firstName-lastName> Branch into master (student's  Repo).
+- [ ] Submit a Pull-Request to merge <firstName-lastName> Branch into master (student's Repo).
 - [ ] Add your Project Manager as a Reviewer on the Pull-request
-- [ ] PM then will count the HW as done by  merging the branch back into master.
+- [ ] PM then will count the HW as done by merging the branch back into master.
 
 ## Minimum Viable Product
 
@@ -76,11 +93,11 @@ Build a login form to authenticate your users.
 
 ### API Documentation
 
-  * **[POST]** * to `/api/login`: returns a token to be added to the header of all other requests. Pass in the following credentials as the `body` of the request: `{ username: 'Lambda School', password: 'i<3Lambd4' }`
-  * **[GET]** to `/api/colors`: returns the list of colors and their hex codes.
-  * **[POST]** to `/api/colors`: creates a new color object. Pass the color as the `body` of the request (the second argument passed to `axios.post`).
-  * **[PUT]** to `/api/colors/:id`: updates the color using the `id` passed as part of the URL. Send the color object with the updated information as the `body` of the request (the second argument passed to `axios.put`).
-  * **[DELETE]** to `/api/colors/123`: removes the color using the `id` passed as part of the URL (123 in example).
+- **[POST]** \* to `/api/login`: returns a token to be added to the header of all other requests. Pass in the following credentials as the `body` of the request: `{ username: 'Lambda School', password: 'i<3Lambd4' }`
+- **[GET]** to `/api/colors`: returns the list of colors and their hex codes.
+- **[POST]** to `/api/colors`: creates a new color object. Pass the color as the `body` of the request (the second argument passed to `axios.post`).
+- **[PUT]** to `/api/colors/:id`: updates the color using the `id` passed as part of the URL. Send the color object with the updated information as the `body` of the request (the second argument passed to `axios.put`).
+- **[DELETE]** to `/api/colors/123`: removes the color using the `id` passed as part of the URL (123 in example).
 
 ## STRETCH PROBLEMS
 
