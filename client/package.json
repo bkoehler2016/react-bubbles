@@ -8,6 +8,8 @@
     "@potion/element": "1.0.0-next.0",
     "@potion/layout": "1.0.0-next.0",
     "axios": "^0.19.2",
+    "babel-loader": "^8.0.6",
+    "eslint-loader": "^3.0.3",
     "node-sass": "^4.13.1",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
