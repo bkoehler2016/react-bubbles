@@ -45,8 +45,11 @@ A web server stores copies of data, including web pages and multipedia, to be se
 - [ ] Which HTTP methods can be mapped to the CRUD acronym that we use when interfacing with APIs/Servers.
 
 C: Create/post
+
 R: Read/get
+
 U: Update/put
+
 D: Delete/delete
 
 ## Project Set Up
